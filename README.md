@@ -17,6 +17,7 @@ H2 In-Memory Database
 Automation Layers:
 
 - API Test Suite (RestAssured + JUnit 5)
+- API Test Suite (Spock + Spring DI + HttpClient)
 - UI Test Suite (Selenide + JUnit 5)
 - UI ↔ API cross-layer consistency validation
 - CI pipelines per project
@@ -57,7 +58,7 @@ React application providing:
 
 # 🧪 Automation Repositories
 
-## API Test Suite — `fintech-api-tests`
+## API Test Suite — `fintech-api-tests` (RestAssured + JUnit 5)
 
 ![API Tests](https://github.com/krasimir-kuzmanov/fintech-api-tests/actions/workflows/api-tests.yml/badge.svg)
 
@@ -65,10 +66,28 @@ React application providing:
 - Negative validation scenarios
 - Security tests (401 / 403)
 - Deterministic execution via `/test/reset`
-- Clean client-based architecture
+- Client-based test architecture
 - GitHub Actions CI
 
 🔗 https://github.com/krasimir-kuzmanov/fintech-api-tests
+
+---
+
+## API Test Suite — `fintech-api-tests-spock-spring` (Spock + Spring + HttpClient)
+
+![Spock API Tests](https://github.com/krasimir-kuzmanov/fintech-api-tests-spock-spring/actions/workflows/ci.yml/badge.svg)
+
+- Spock BDD-style specifications
+- Data-driven testing with `@Unroll`
+- Spring annotation-based configuration
+- Dependency injection for API clients
+- Java 11+ `HttpClient` (no RestAssured)
+- Deterministic state via `/test/reset`
+- Security and negative scenarios
+
+This repository focuses on showcasing Spring configuration and DI skills in a test harness context.
+
+🔗 https://github.com/krasimir-kuzmanov/fintech-api-tests-spock-spring
 
 ---
 
